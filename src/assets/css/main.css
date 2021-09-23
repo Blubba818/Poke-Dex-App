@@ -1,0 +1,335 @@
+/*****************************************************
+Global Styles
+*****************************************************/
+
+body {
+    background-color: #434356;
+    color: white;
+}
+
+h1 {
+    font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+h2, h3, h4, h5, h6, h7, p, .btn, input {
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 2rem 1rem;
+}
+
+router-link {
+    color: white;
+    text-decoration: none !important;
+}
+
+/*****************************************************
+Navbar
+*****************************************************/
+
+.navbar {
+    background-color: #ff3333;
+    height: 150px;
+    border-bottom: #2d2d39 solid 2px;
+}
+
+.navbar-brand h1 {
+    text-shadow: 2px 2px 2px rgba(153,0,85,.5)
+}
+
+.nav-item {
+    margin: 2rem auto;
+}
+
+.btn {
+    margin-left: 2rem;
+}
+
+.btn-primary {
+    background-color: #ff3333;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(153,0,85,.5);
+    transition: .5s;
+}
+
+.btn-primary:hover, .card:hover {
+    color: black;
+    background-color: #d6f0f5;
+    box-shadow: 2px 5px 10px rgba(255,255,255,.75);
+    box-shadow: -2px -5px 10px rgba(255,255,255,.75);
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:active:focus:not(:disabled):not(.disabled), .btn:active, .btn:focus {
+    transform: translateX(2px) translateY(2px);
+    color: white;
+    background-color: #cc0036;
+    box-shadow: none !important;
+    box-shadow: -2px -2px -2px rgba(153,0,85,1);
+    outline: 0 !important;
+}
+
+/*****************************************************
+National Dex
+*****************************************************/
+
+.user-search {
+    width: 10rem;
+    margin: 0 auto;
+}
+
+input {
+    background-color: #7e7e9a;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+::placeholder {
+    color: #c6c6d2;
+    opacity: 1;
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+}
+
+:-ms-input-placeholder {
+    color: #c6c6d2;
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+}
+
+::-ms-input-placeholder {
+    color: #c6c6d2;
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+}
+
+.card {
+    background-color: #2d2d39;
+    color: white;
+    width: 300px;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    transition: .5s;
+    text-decoration: none !important;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-body h6 {
+    margin-right: 1rem;
+    text-decoration: none !important;
+}
+
+.type-small {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: .5rem;
+    border-radius: 10px;
+    padding: .1rem .5rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    text-shadow: 2px 2px 2px black;
+}
+
+.card .type-small {
+    color: white;
+}
+
+/*****************************************************
+Details
+*****************************************************/
+
+.pokemon {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.info {
+    align-content: center;
+    width: 100%;
+    background-color: #2d2d39;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.info-left {
+    text-align: right;
+    width: 25%;
+}
+
+.info-right {
+    text-align: left;
+    width: 25%;
+}
+
+.dex-nav {
+    width: 25%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.dex-nav a {
+    color: white;
+}
+
+.dex-nav a:hover {
+    color: #e2e2e9;
+}
+
+.dex-nav i {
+    font-size: 2rem;
+}
+
+.dex-back {
+    text-align: left;
+}
+
+.dex-forward {
+    text-align: right;
+}
+
+.details {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 0;
+}
+
+.details img {
+    width: 400px;
+}
+
+.details-left {
+    text-align: center;
+}
+
+.details-right {
+    width: 50%;
+    margin: 1rem auto;
+    padding: 2rem 1rem;
+}
+
+.type-label {
+    margin: 0 auto;
+}
+
+.types {
+    width: 50%;
+}
+
+.type {
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    text-shadow: 2px 2px 2px black;
+}
+
+.dimensions {
+    margin: 1rem auto;
+}
+
+.flavor {
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.type-container {
+    width: 50%;
+    padding: 0;
+}
+
+/*****************************************************
+Type Colors
+*****************************************************/
+
+.normal {
+    background-color: #f5f5f5;
+}
+
+.flying {
+    background-color: #80e5ff;
+}
+
+.grass {
+    background-color: #00ac17;
+}
+
+.bug {
+    background-color: #208951;
+}
+
+.fire {
+    background-color: #ff2a00;
+}
+
+.water {
+    background-color: #0000e3;
+}
+
+.ice {
+    background-color: #00f6e7;
+}
+
+.electric {
+    background-color: #fff000;
+}
+
+.psychic {
+    background-color: #c60089;
+}
+
+.ghost {
+    background-color: #7833a3;
+}
+
+.poison {
+    background-color: #ab00f0;
+}
+
+.fighting {
+    background-color: #a92143;
+}
+
+.ground {
+    background-color: #bb622d;
+}
+
+.rock {
+    background-color: #733317;
+}
+
+.steel {
+    background-color: #90909d;
+}
+
+.dark {
+    background-color: #36363a;
+}
+
+.dragon {
+    background-color: #ff0b65;
+}
+
+.fairy {
+    background-color: #ff9ace;
+}
+
+/*****************************************************
+Media Queries
+*****************************************************/
