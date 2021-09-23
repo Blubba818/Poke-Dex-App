@@ -6,7 +6,7 @@
     </div>
     <div class="d-flex flex-row flex-wrap justify-content-center">
       <div v-for="(pokemon, index) in filteredPokemon" :key="index">
-        <router-link :to="`/details/${pokemon.id}`">
+        <router-link :to="`/details/${pokemon.id}`" style="text-decoration: none; color: inherit">
           <div class="card col-md-4 col-lg-3 col-sm-12">
             <div class="card-body d-flex justify-content-start flex-column">
               <!--conditionals for pokemon numbers-->
