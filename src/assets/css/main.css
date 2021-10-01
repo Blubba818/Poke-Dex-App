@@ -3,18 +3,17 @@ Global Styles
 *****************************************************/
 
 body {
-    background-color: #434356;
+    background-image: url('../img/poke-bg.png');
+    background-attachment: fixed;
     color: white;
 }
 
 h1 {
     font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
-    text-decoration: none;
 }
 
 h2, h3, h4, h5, h6, h7, p, .btn, input {
     font-family: 'Staatliches', Arial, Helvetica, sans-serif;
-    text-decoration: none;
 }
 
 .container {
@@ -26,22 +25,53 @@ h2, h3, h4, h5, h6, h7, p, .btn, input {
 
 router-link {
     color: white;
-    text-decoration: none !important;
 }
 
 /*****************************************************
 Navbar
 *****************************************************/
 
-.navbar {
-    background-color: #ff3333;
+.header {
+    background-image: url('../img/navbar.png');
     height: 150px;
-    border-bottom: #2d2d39 solid 2px;
+}
+
+.navbar {
+    height: 100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    align-self: flex-start;
+}
+
+.navbar-nav {
+    align-self: flex-end;
 }
 
 .navbar-brand h1 {
     text-shadow: 2px 2px 2px rgba(153,0,85,.5)
 }
+
+#nav-img:hover {
+    -webkit-animation:spin 2.5s linear infinite;
+    -moz-animation:spin 2.5s linear infinite;
+    animation:spin 2.5s linear infinite;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
 
 .nav-item {
     margin: 2rem auto;
@@ -79,6 +109,10 @@ Navbar
 National Dex
 *****************************************************/
 
+#dex-intro {
+    text-align: center;
+}
+
 .user-search {
     width: 10rem;
     margin: 0 auto;
@@ -108,7 +142,7 @@ input {
 }
 
 .card {
-    background-color: #2d2d39;
+    background-color: rgba(45,45,57,.75);
     color: white;
     width: 300px;
     height: 90%;
@@ -119,7 +153,6 @@ input {
     border-radius: 10px;
     border: none;
     transition: .5s;
-    text-decoration: none !important;
 }
 
 .card img {
@@ -128,7 +161,6 @@ input {
 
 .card-body h6 {
     margin-right: 1rem;
-    text-decoration: none !important;
 }
 
 .type-small {
@@ -144,6 +176,11 @@ input {
 
 .card .type-small {
     color: white;
+}
+
+#load-button {
+    width: 100px;
+    margin-top: 1rem;
 }
 
 /*****************************************************
@@ -217,6 +254,8 @@ Details
 }
 
 .details-right {
+    background-color: rgba(45,45,57,.75);
+    border-radius: 10px;
     width: 50%;
     margin: 1rem auto;
     padding: 2rem 1rem;
@@ -259,7 +298,7 @@ Type Colors
 *****************************************************/
 
 .normal {
-    background-color: #f5f5f5;
+    background-color: #e6e6e6;
 }
 
 .flying {
@@ -331,5 +370,125 @@ Type Colors
 }
 
 /*****************************************************
+Type Charts
+*****************************************************/
+
+.type-charts {
+    text-align: center;
+    align-items: center;
+}
+
+#chart-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.chart {
+    width: 50%;
+    margin-bottom: 2.5rem;
+}
+
+/*****************************************************
 Media Queries
 *****************************************************/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    body {
+        background-image: none;
+        background-color: #434356;
+    }
+    
+    .header {
+        background-image: none;
+        background-color: #ff3333;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar {
+        height: 75px;
+    }
+
+    .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .card {
+        margin-left: 0;
+    }
+    
+    .details {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 150px;
+        padding: 0;
+    }
+    
+    .details img {
+        width: 80%;
+    }
+    
+    .details-right {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    
+    .types {
+        width: 100%;
+    }
+    
+    .type {
+        width: 100%;
+        margin-left: 1rem;
+        padding: .5rem;
+    }
+    
+    .flavor {
+        width: 100%;
+    }
+
+    .chart {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+    .info {
+        width: 80%;
+    }
+    
+    .details {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 150px;
+        padding: 0;
+    }
+    
+    .details img {
+        width: 80%;
+    }
+    
+    .details-right {
+        width: 80%;
+        margin: 1rem auto;
+        padding: 2rem 1rem;
+    }
+    
+    .types {
+        width: 100%;
+    }
+    
+    .flavor {
+        width: 100%;
+    }
+
+}

@@ -1,11 +1,14 @@
 <template>
   <div class="dex container">
+    <div id="dex-intro" class="row d-flex justify-content-center flex-column">
+      <h2>Welcome to the World of Pok&eacute;mon!</h2>
+      <p>Browse the National Dex below or search for a Pok&eacute;mon by name or National Dex number.</p>
+    </div>
     <div class="row d-flex justify-content-center flex-row">
-      <input class="user-search" type="text" placeholder="Search by Number" v-model="userSearchNumber">
-      <input class="user-search" type="text" placeholder="Search by Name" v-model="userSearchName">
+      <input class="user-search" type="text" placeholder="Search" v-model="userSearch">
     </div>
     <div class="d-flex flex-row flex-wrap justify-content-center">
-      <div v-for="(pokemon, index) in filteredPokemon" :key="index">
+      <div v-for="(pokemon, index) in filteredPokemon.slice(0,loadEnd)" :key="index">
         <router-link :to="`/details/${pokemon.id}`" style="text-decoration: none; color: inherit">
           <div class="card col-md-4 col-lg-3 col-sm-12">
             <div class="card-body d-flex justify-content-start flex-column">
@@ -66,6 +69,9 @@
         </router-link>
       </div>
     </div>
+    <div class="row">
+      <button id="load-button" class="btn btn-primary" @click="loadEnd = loadEnd + 12">Load More</button>
+    </div>
   </div>
 </template>
 
@@ -78,12 +84,11 @@ export default {
 
     const state = reactive({
       pokemons: [],
-      userSearchName: "",
-      userSearchNumber: "",
+      userSearch: "",
       sortedPokemon: computed(()=> sortPokemon()),
-      filteredPokemon: computed(()=> updatePokemon())
+      filteredPokemon: computed(()=> updatePokemon()),
+      loadEnd: 12
     })
-
 
     function sortPokemon() {
       function compare(a, b) {
@@ -97,25 +102,23 @@ export default {
     return state.pokemons.sort(compare)
     }
 
+    function removeLeadingZeroes(str) {
+      const regex = new RegExp("^0+(?!$)",'g')
+
+      str = str.replaceAll(regex, "")
+    
+      return str
+    }
+
     function updatePokemon() {
-      if(!state.userSearchNumber && !state.userSearchName){
+      if(!state.userSearch){
         return state.sortedPokemon
       }
 
-      else if(!state.userSearchNumber && state.userSearchName) {
-        return state.sortedPokemon.filter((pokemon)=>
-          pokemon.name.includes(state.userSearchName)
-        )
-      }
 
-      else if(state.userSearchNumber && !state.userSearchName) {
-        return state.sortedPokemon.filter((pokemon)=> 
-          pokemon.id.toString().includes(state.userSearchNumber)
-        )
-      }
 
       return state.sortedPokemon.filter((pokemon)=>
-        (pokemon.name.includes(state.userSearchName) && pokemon.id.toString().includes(state.userSearchNumber))
+        (pokemon.name.includes(state.userSearch) || pokemon.id.toString().includes(removeLeadingZeroes(state.userSearch)))
       )
     }
 

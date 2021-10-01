@@ -62,10 +62,10 @@
             </div>
         </div>
         <div class="row poke-details">
-            <div class="col-md-6 details-left">
+            <div class="col-lg-6 details-left">
                 <img :src="imgUrl" alt="">
             </div>
-            <div class="col-md-6 details-right">
+            <div class="col-lg-6 details-right">
                 <p class="type-label">Type:</p>
                 <div class="types row d-flex flex-nowrap">
                     <div class="type-container" v-for="(type, index) in pokemon.types" :key="index">
